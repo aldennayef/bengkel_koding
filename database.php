@@ -95,7 +95,7 @@ function updateStatusTodo($pdo, $id, $status) {
             ':id' => $id,
             ':status' => $status,
         ]);
-        return true; // Mengembalikan nilai true jika berhasil
+        return true;
     } catch (PDOException $e) {
         echo "Gagal menyimpan data: " . $e->getMessage();
         return false;
@@ -121,7 +121,7 @@ $pdo = connectDatabase($host, $port, $dbname, $user, $password);
 // Mengambil data dari database
 $todos = fetchTodos($pdo);
 
-// Proses form submission
+// Proses form
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['simpan'])) {
     // Ambil data dari form
     $id = $_POST['id'];
@@ -129,10 +129,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['simpan'])) {
     $tgl_awal = $_POST['tgl_awal'];
     $tgl_akhir = $_POST['tgl_akhir'];
 
-    // Validasi sederhana apakah semua field diisi
+    // Validasi apakah semua field terisi
     if (!empty($isi) && !empty($tgl_awal) && !empty($tgl_akhir)) {
+        // Apakah form membawa id ? jika iya, berarti UPDATE DATA, jika tidak maka SIMPAN DATA
         if($id){
-            // Simpan data ke database menggunakan fungsi saveTodo
+            // Simpan data ke database menggunakan fungsi updateTodo
             if (updateTodo($pdo, $id, $isi, $tgl_awal, $tgl_akhir)) {
                 header("Location: " . $_SERVER['PHP_SELF']);
                 exit;
