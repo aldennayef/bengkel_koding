@@ -61,7 +61,7 @@
                         </li>
 
                         <li class="sidebar-item  ">
-                            <a href="https://github.com/zuramai/mazer/blob/main/CONTRIBUTING.md" class='sidebar-link'>
+                            <a href="<?=base_url('home/periksa')?>" class='sidebar-link'>
                                 <i class="fa-solid fa-book-medical"></i>
                                 <span>Periksa</span>
                             </a>
@@ -70,7 +70,7 @@
                         <li class="sidebar-title">Actions</li>
 
                         <li class="sidebar-item  ">
-                            <a href="https://github.com/zuramai/mazer/blob/main/CONTRIBUTING.md" class='sidebar-link'>
+                            <a href="https://github.com/aldennayef/bengkel_koding" class='sidebar-link'>
                                 <i class="fa-brands fa-github"></i>
                                 <span>Git Hub</span>
                             </a>
@@ -306,11 +306,7 @@
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
-                        <p>2021 &copy; Mazer</p>
-                    </div>
-                    <div class="float-end">
-                        <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                                href="http://ahmadsaugi.com">A. Saugi</a></p>
+                        <p>2024 &copy; Sistem Informasi Poliklinik</p>
                     </div>
                 </div>
             </footer>
