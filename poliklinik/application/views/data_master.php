@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php if($type=='data_dokter'){?>
-    <title>Data Dokter - Poliklinik</title>
+    <title>Data Dokter - Sistem Informasi Poliklinik</title>
     <?php } else {?>
-    <title>Data Pasien - Poliklinik</title>
+    <title>Data Pasien - Sistem Informasi Poliklinik</title>
     <?php }?>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">

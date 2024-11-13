@@ -15,6 +15,9 @@ class Home extends CI_Controller {
 		}
 		else{
 			$data['user'] = $this->modelku->get_where_data('users',['id'=>$this->session->userdata('id')])->row_array();
+			$data['pasien'] = count($this->modelku->get_data('pasien'));
+			$data['dokter'] = count($this->modelku->get_data('dokter'));
+			$data['periksa'] = count($this->modelku->get_data('periksa'));
 			$this->load->view('dashboard',$data);
 		}
 	}
