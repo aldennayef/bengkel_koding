@@ -44,6 +44,7 @@ class Krs extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
+	// DOWNLOAD KRS
 	public function unduh_krs($idmhs){
 		$this->load->library('Pdfgenerator');
 		$data['mahasiswa'] = $this->modelku->get_where_data('inputmhs',array('id'=>$idmhs))->row_array();
@@ -58,6 +59,7 @@ class Krs extends CI_Controller {
         $this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
 	}
 
+	// INSERT DATA TABEL INPUTMHS
 	public function input_mhs(){
 		$nama = $this->input->post('namaMhs');
 		$nim = $this->input->post('nimMhs');
@@ -87,6 +89,7 @@ class Krs extends CI_Controller {
 		}
 	}
 
+	// INSERT DATA TABEL JWL_MATAKULIAH
 	public function input_matkul(){
 		$nama = $this->input->post('namaMatkul');
 		$sks = $this->input->post('sksMatkul');
@@ -109,6 +112,7 @@ class Krs extends CI_Controller {
 		}
 	}
 
+	// HAPUS DATA TABEL INPUTMHS
 	public function hapus_mhs() {
 		$id = $this->input->post('id');
 	
@@ -132,7 +136,7 @@ class Krs extends CI_Controller {
 		}
 	}
 	
-
+	// HAPUS DATA TABEL JWL_MATAKULIAH
 	public function hapus_matkul(){
 		$id = $this->input->post('id');
 
@@ -146,6 +150,7 @@ class Krs extends CI_Controller {
 		}
 	}
 
+	// AMBIL DATA MATA KULIAH DARI TABEL JWL_MATAKULIAH
 	public function get_data_matkul(){
 		$id = $this->input->post('id');
 		$data = $this->modelku->get_where_data('jwl_matakuliah',array('id'=>$id))->row_array();
@@ -153,6 +158,7 @@ class Krs extends CI_Controller {
 		echo json_encode($data);
 	}
 
+	// UPDATE DATA TABEL JWL_MATAKULIAH
 	public function edit_matkul(){
 		$id = $this->input->post('idMatkul');
 		$nama = $this->input->post('namaMatkul');
@@ -176,6 +182,7 @@ class Krs extends CI_Controller {
 		}
 	}
 
+	// INSERT DATA KRS TABEL JWL_MHS + KOLOM MATAKULIAH TABEL INPUTMHS
 	public function tambah_krs()
 	{
 		$input = json_decode(file_get_contents('php://input'), true); // Decode JSON
@@ -225,6 +232,7 @@ class Krs extends CI_Controller {
 		echo json_encode(['status' => 'success', 'message' => 'Data berhasil ditambahkan!']);
 	}
 
+	// HAPUS DATA TABEL JWL_MHS
 	public function hapus_krs()
 	{
 		$id = $this->input->post('id'); // ID data di jwl_mhs
