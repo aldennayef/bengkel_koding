@@ -164,8 +164,6 @@
                                     <td><?=$jwl['ruangan']?></td>
                                     <td><button class="btn btn-danger notika-btn-success hapusBtn" id="sa-warning"
                                             data-idMhsHapus="<?=$jwl['id']?>" data-matkul="<?= $jwl['matakuliah']; ?>" data-sks="<?= $jwl['sks']; ?>">Hapus</button>
-                                        |
-                                        <button class="btn btn-info notika-btn-success">Lihat</button>
                                     </td>
                                 </tr>
                                 <?php endforeach; } else{?>
