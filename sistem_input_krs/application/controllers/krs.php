@@ -216,6 +216,9 @@ class Krs extends CI_Controller {
 
 		// Gabungkan dengan data mata kuliah yang sudah ada di tabel inputmhs
 		$existing_matkul = isset($mhs['matakuliah']) ? $mhs['matakuliah'] : ''; // Mata kuliah yang sudah ada
+		if ($existing_matkul === '-') {
+			$existing_matkul = ''; // Set nilai kosong
+		}
 		if (!empty($existing_matkul)) {
 			$matkul_list = array_merge(explode(', ', $existing_matkul), $matkul_list); // Gabungkan mata kuliah lama dan baru
 		}
